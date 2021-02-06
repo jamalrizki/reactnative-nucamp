@@ -103,7 +103,7 @@ class CampsiteInfo extends Component {
 
     handleComment(campsiteId) {
         console.log(JSON.stringify(this.state));
-        this.props.postComment(campsiteId, rating, author, text);
+        this.props.postComment(campsiteId, this.state.rating, this.state.author, this.state.text);
         this.toggleModal();
     }
 
@@ -169,10 +169,10 @@ class CampsiteInfo extends Component {
                         <View style={{ margin: 10 }}>
                             <Button
                                 onPress={() => {
-                                    this.toggleModal();
+                                    this.handleComment(campsiteId);
                                     this.resetForm();
                                 }}
-                                color='#808080'
+                                color='#5637DD'
                                 title='Submit'
                             />
                         </View>
